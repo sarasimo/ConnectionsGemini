@@ -33,5 +33,6 @@ for (var c=0; c<columns; c++)
 	}
 }
 
-globalvar guess;
-guess = array_create(4, noone);
+globalvar guess_array;
+guess_array = array_create(4, noone);
+seletion_array = array_create(4, noone);

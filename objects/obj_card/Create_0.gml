@@ -8,6 +8,7 @@ last_x = x;
 last_y = y;
 depth = 0;
 
+image_ingex = 4;
 col_index = 0;
 /*
 var _sw, _sh;

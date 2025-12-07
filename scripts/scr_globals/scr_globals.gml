@@ -1,3 +1,5 @@
+#macro GAME_SPEED  game_get_speed(gamespeed_fps)
+
 PUZZLE_TEMPLATE = [
     {
         category : "category1 name",

@@ -18,11 +18,12 @@ if (mouse_check_button_released(mb_left))
 	    if (x == last_x && y == last_y)
 		{
 
-            for (var i = 0; i< array_length(guess); i++) 
+            for (var i = 0; i< array_length(guess_array); i++) 
             {
-                if (guess[i] == noone)
+                if (guess_array[i] == noone)
                 {
-                    guess[i] = txt;
+                    guess_array[i] = txt;
+                    selection_array[i] = id;
                     selected = true;
                     break;
                 }
@@ -74,7 +75,7 @@ if (dragged != noone) with (dragged)
 
 
 //right click on cards
-if (mouse_check_button_released(mb_right)) 
+if (mouse_check_button_pressed(mb_right)) 
 {
     var _inst = collision_point(mouse_x,mouse_y, obj_card,0,0); 
     
@@ -85,7 +86,7 @@ if (mouse_check_button_released(mb_right))
         exit;
     }
     
-    guess[array_get_index(guess, _inst.txt)] = noone;
+    guess_array[array_get_index(guess_array, _inst.txt)] = noone;
     _inst.selected = false;
     _inst.alarm[0] = 1;
 }

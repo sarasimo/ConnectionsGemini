@@ -7,7 +7,7 @@ The same word should never appear in more than 1 group.
 Each category should get slightly more challenging than the one prior.
 Return only your active_puzzle as JSON object that bears the following structure.
 
-[
+"[
     {
         "category" : "category1 name",
         "words" : ["word1", "word2", "word3", "word4" ]
@@ -24,4 +24,4 @@ Return only your active_puzzle as JSON object that bears the following structure
         "category" : "category4 name",
         "words" : ["word1", "word2", "word3", "word4" ]
     },
-]
+]"
