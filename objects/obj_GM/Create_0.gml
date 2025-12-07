@@ -1,7 +1,8 @@
 ///@description
 if (array_length(word_array) <16) 
 {
-	word_array = [
+	//test array
+    word_array = [
 		"potato", "brain", "litter", "feature", 
 		"sixteen", "crepe paper", "prune", "talk", 
 		"tooth", "shar pei", "pepper"," film", 
@@ -12,27 +13,35 @@ if (array_length(word_array) <16)
 dragged = noone; 
 target = noone;
 
-///Draw cards
-//var  _sw, _n;
-//var _sw = sprite_get_width(spr_card);
-//var _sh = sprite_get_height(spr_card); 
-sw = room_width/columns;
-sh = room_height/rows;
+///Set grid size
+grid_w = room_width/columns;
+grid_h = room_height/rows;
 
 var _n = 0; //keeps track of words read from the array
 
+globalvar board_x; //array that stores the x corrdinates of columns
+globalvar board_y; //array that stores the y corrdinates of rows
+
 //Generate grid or words
-for (var c=0; c<columns; c++) 
+for (var c = 0; c <columns; c++) 
 {
+    var _inst = noone;
     for (var r=0; r<rows; r++) 
 	{
-	    var _inst = instance_create_depth(offset+c*sw, offset+r*sh,0,cards)				
+	    _inst = instance_create_depth(offset+ c*grid_w, offset+ r*grid_h,0,cards)				
 		_inst.txt = word_array[_n]
+        board_y[r] = _inst.y;
 		//show_debug_message(_n)
 		_n++;
 	}
+    board_x[c] = _inst.x;
 }
 
-globalvar guess_array;
-guess_array = array_create(4, noone);
-seletion_array = array_create(4, noone);
+globalvar guess_words, guess_cards, categories_found;
+guess_words = array_create(4, noone);
+guess_cards = array_create(4, noone);
+
+categories_found = 0;
+errors_permited= 4;
+
+show_debug_message("brdx {0}, brd y {1}", board_x, board_y );

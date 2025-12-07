@@ -1,8 +1,11 @@
 ///@description Move and swap cards
+
+
 if (mouse_check_button_pressed(mb_left))
 {
     dragged = collision_point(mouse_x,mouse_y, obj_card,0,0);
-	if (dragged != noone) with (dragged)
+    show_debug_message("dragged {0}", dragged);
+    if (dragged != noone) with (dragged)
 	{
 	    dx = x - mouse_x;
 		dy = y - mouse_y;
@@ -13,17 +16,18 @@ if (mouse_check_button_released(mb_left))
 {
 	with (dragged)
 	{
-		
-        //if object is clicked and not moved
+		#region click a card - no drag
+        
 	    if (x == last_x && y == last_y)
 		{
 
-            for (var i = 0; i< array_length(guess_array); i++) 
+            for (var i = 0; i< array_length(guess_words); i++) 
             {
-                if (guess_array[i] == noone)
+                if (guess_words[i] == noone)
                 {
-                    guess_array[i] = txt;
-                    selection_array[i] = id;
+                    guess_words[i] = txt;
+                    guess_cards[i] = id;
+                    show_debug_message("instances {0}", guess_cards);
                     selected = true;
                     break;
                 }
@@ -32,9 +36,12 @@ if (mouse_check_button_released(mb_left))
 			//runs code to set card colour
 			alarm[0] = 1; 
 		}
-		
         
-		var _t = collision_point(mouse_x,mouse_y, obj_card,0,true);
+        #endregion
+        
+		#region drag card to new position
+        
+        var _t = collision_point(mouse_x,mouse_y, obj_card,0,true);
 		if (_t != noone) //if on top of other card
 		{
 		    other.target = _t;
@@ -60,21 +67,23 @@ if (mouse_check_button_released(mb_left))
 		    x = last_x;
 			y = last_y;
 		}
+        #endregion
+        
+		
 	}
 	dragged = noone;
 }
 
-
+//move with mouse
 if (dragged != noone) with (dragged)
 {	
 	x = mouse_x + dx;
 	y = mouse_y + dy;
 }
 
-#region Colour change
 
 
-//right click on cards
+//deselect cards
 if (mouse_check_button_pressed(mb_right)) 
 {
     var _inst = collision_point(mouse_x,mouse_y, obj_card,0,0); 
@@ -86,26 +95,28 @@ if (mouse_check_button_pressed(mb_right))
         exit;
     }
     
-    guess_array[array_get_index(guess_array, _inst.txt)] = noone;
+    guess_words[array_get_index(guess_words, _inst.txt)] = noone;
+    guess_cards[array_get_index(guess_cards, _inst)] = noone;
     _inst.selected = false;
     _inst.alarm[0] = 1;
 }
 
+#region Colour change
 
 if !(mouse_wheel_up() || mouse_wheel_down()) exit;
  
 var _inst = collision_point(mouse_x,mouse_y, obj_card,0,0);   
 if (mouse_wheel_up())
 {
-    _inst.col_index -= 1; //go to next colour
+    _inst.image_index -= 1; //go to next colour
 }
 
 if (mouse_wheel_down())
 {
-    _inst.col_index += 1; //go to previous color
+    _inst.image_index += 1; //go to previous color
 }
 
-_inst.col_index = clamp_cycle(_inst.col_index, 1, 4)
+_inst.image_index = clamp_cycle(_inst.image_index, 1, 4)
 _inst.alarm[0] = 1; //runs colour change code
 
 #endregion

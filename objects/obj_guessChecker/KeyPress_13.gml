@@ -1,5 +1,5 @@
 ///@description
-if (array_get_index(guess_array, noone))
+if (array_get_index(guess_words, noone))
 {
     var _str = "Select 4 words before submitting";
     show_debug_message(_str);
@@ -10,5 +10,5 @@ if (array_get_index(guess_array, noone))
 #region Check user submission against categories
     
     
-show_debug_message("guesses {0}", guess_array);   
+show_debug_message("guesses {0}", guess_words);   
 #endregion    
