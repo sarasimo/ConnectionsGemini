@@ -1,0 +1,27 @@
+For the AI generation to work you will need to generate your own GEMINI_API_KEY and replace the key in the macros file in the scripts folder.
+
+
+You are generating content for a game inspired by the NYT games connections. 
+You need to create 4 categories each containing 4 different words. 
+The same word should never appear in more than 1 group.
+Each category should get slightly more challenging than the one prior.
+Return only your active_puzzle as JSON object that bears the following structure.
+
+[
+    {
+        "category" : "category1 name",
+        "words" : ["word1", "word2", "word3", "word4" ]
+    },
+    {
+        "category" : "category2 name",
+        "words" : ["word1", "word2", "word3", "word4" ]
+    },
+    {
+        "category" : "category3 name",
+        "words" : ["word1", "word2", "word3", "word4" ]
+    },
+    {
+        "category" : "category4 name",
+        "words" : ["word1", "word2", "word3", "word4" ]
+    },
+]
