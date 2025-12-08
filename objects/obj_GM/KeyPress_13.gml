@@ -1,4 +1,7 @@
-///@description
+///@description Get 
+
+if game_mode = gm.nyt_companion  exit;
+
 if (array_get_index(guess_words, noone))
 {
     var _str = "Select 4 words before submitting";
@@ -6,27 +9,42 @@ if (array_get_index(guess_words, noone))
     exit;
 }
 
-if game_mode = gm.nyt_companion  exit;
 #region Check user submission against categories
 show_debug_message("guesses {0}", guess_words);  
 
-
+//this function moves the cards from a correct guess to the top 
 function reposition_matched_card(_element, _index)
 {
-    
-    
-    var _t = collision_point( board_x[_index], board_y[categories_found], obj_card, false, true);
-    if _t 
+    //find card in target position and move them to solved cards location   
+    var _replace = collision_point( board_x[_index], board_y[categories_found], obj_card, false, true);
+	var target_x, target_y,
+    if _replace 
     {
-        _t.last_x = _t.x;
-        _t.last_y = _t.y;
-        _t.x = _element.x
-        _t.y = _element.y;
+        target_x = _replace.x;
+        target_y = _replace.y;
+        _replace.x = _element.x
+        _replace.y = _element.y;
+		_replace.last_x = _replace.x;
+        _replace.last_y = _replace.y;
 
     }
     
-    _element.y = _t.last_y//board_y[categories_remaining];
-    _element.x = _t.last_x//board_x[_index];
+	with (_element)
+	{
+		
+        selected = false;
+		
+		x = target_x;
+		y = target_y;
+		
+		col_index = category_color;
+        alarm[0] = 1;
+	}
+    	
+	instance_destroy(_element);
+	var _banner = instance_create_depth(board_x[0],board_y[categories_found],depth, obj_banner, active_puzzle[category_color])
+	with (_banner) col_index = category_color;
+
 }
 
 //Cycle through each category
@@ -47,14 +65,7 @@ for(var category = 0; category < array_length(active_puzzle); category++ )
             if (matches == 4)
             {
                 show_debug_message("Group found!!!")
-                with (obj_card) if (selected) 
-                {
-                    col_index = category + 1;
-                    selected = false;
-                    alarm[0] = 1;
-                    
-                }
-                
+				category_color = category;
                 array_foreach(guess_cards, reposition_matched_card);
                 categories_found += 1;
                 guess_words = array_create(4, noone);

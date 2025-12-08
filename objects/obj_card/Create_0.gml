@@ -8,8 +8,9 @@ last_x = x;
 last_y = y;
 depth = 0;
 
-image_ingex = 4;
-col_index = 0;
+col_index = noone;
+alarm[0] = 1;
+
 /*
 var _sw, _sh;
 _sw = obj_GM.sw;

@@ -37,11 +37,13 @@ for (var c = 0; c <columns; c++)
     board_x[c] = _inst.x;
 }
 
-globalvar guess_words, guess_cards, categories_found;
+globalvar guess_words, guess_cards, categories_found, category_color;
 guess_words = array_create(4, noone);
 guess_cards = array_create(4, noone);
 
+category_color = noone;
 categories_found = 0;
-errors_permited= 4;
+errors_permited = 4;
+
 
 show_debug_message("brdx {0}, brd y {1}", board_x, board_y );

@@ -45,8 +45,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_stretch",
-    "path":"sprites/spr_stretch/spr_stretch.yy",
+    "name":"spr_card",
+    "path":"sprites/spr_card/spr_card.yy",
   },
   "spriteMaskId":null,
   "visible":false,

@@ -48,3 +48,8 @@ enum gm
 }
 
 game_mode = gm.solvable_game;
+
+enum card_img
+{
+    black, yellow, green, blue, purple, white, gray,
+}

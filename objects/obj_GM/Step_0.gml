@@ -1,6 +1,5 @@
 ///@description Move and swap cards
 
-
 if (mouse_check_button_pressed(mb_left))
 {
     dragged = collision_point(mouse_x,mouse_y, obj_card,0,0);
@@ -27,14 +26,12 @@ if (mouse_check_button_released(mb_left))
                 {
                     guess_words[i] = txt;
                     guess_cards[i] = id;
-                    show_debug_message("instances {0}", guess_cards);
+                    show_debug_message("selected {0}", guess_words[i]);
                     selected = true;
                     break;
                 }
             }
-
-			//runs code to set card colour
-			alarm[0] = 1; 
+			exit;
 		}
         
         #endregion
@@ -75,7 +72,7 @@ if (mouse_check_button_released(mb_left))
 }
 
 //move with mouse
-if (dragged != noone) with (dragged)
+if (mouse_check_button(mb_left) && dragged != noone) with (dragged)
 {	
 	x = mouse_x + dx;
 	y = mouse_y + dy;
@@ -84,21 +81,21 @@ if (dragged != noone) with (dragged)
 
 
 //deselect cards
-if (mouse_check_button_pressed(mb_right)) 
+if (mouse_check_button_pressed(mb_right) && !mouse_check_button(mb_left)) 
 {
     var _inst = collision_point(mouse_x,mouse_y, obj_card,0,0); 
     
-    if (!_inst.selected)
-    { 
-        _inst.col_index = 0; //set to white
-	    _inst.alarm[0] = 1;
-        exit;
+	if (!_inst) exit;
+    if (_inst.selected)
+    {
+		var _idx = array_get_index(guess_words, _inst.txt);
+		guess_words[_idx] = noone;
+	    guess_cards[_idx] = noone;
+	    _inst.selected = false;
+		show_debug_message("deselected {0}", guess_words[_idx]);
+       
     }
     
-    guess_words[array_get_index(guess_words, _inst.txt)] = noone;
-    guess_cards[array_get_index(guess_cards, _inst)] = noone;
-    _inst.selected = false;
-    _inst.alarm[0] = 1;
 }
 
 #region Colour change
@@ -117,6 +114,6 @@ if (mouse_wheel_down())
 }
 
 _inst.image_index = clamp_cycle(_inst.image_index, 1, 4)
-_inst.alarm[0] = 1; //runs colour change code
+//_inst.alarm[0] = 1; //runs colour change code
 
 #endregion
