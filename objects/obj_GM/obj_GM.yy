@@ -7,6 +7,7 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":82,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":13,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_GM",
@@ -30,16 +31,13 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
+    {"$GMObjectProperty":"v2","%Name":"msg_time_sec","filters":[],"listItems":[],"multiselect":false,"name":"msg_time_sec","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"2","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"rows","filters":[],"listItems":[],"multiselect":false,"name":"rows","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"4","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"columns","filters":[],"listItems":[],"multiselect":false,"name":"columns","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"4","varType":0,},
-    {"$GMObjectProperty":"v2","%Name":"offset","filters":[],"listItems":[],"multiselect":false,"name":"offset","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"cards","filters":[
         "GMObject",
       ],"listItems":[],"multiselect":false,"name":"cards","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_card","varType":5,},
-    {"$GMObjectProperty":"v2","%Name":"col01","filters":[],"listItems":[],"multiselect":false,"name":"col01","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"$FF7FFFFF","varType":7,},
-    {"$GMObjectProperty":"v2","%Name":"col02","filters":[],"listItems":[],"multiselect":false,"name":"col02","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"$FF51CC51","varType":7,},
-    {"$GMObjectProperty":"v2","%Name":"col03","filters":[],"listItems":[],"multiselect":false,"name":"col03","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"$FFFF6700","varType":7,},
-    {"$GMObjectProperty":"v2","%Name":"col04","filters":[],"listItems":[],"multiselect":false,"name":"col04","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"$FFE54495","varType":7,},
+    {"$GMObjectProperty":"v2","%Name":"errors_permited","filters":[],"listItems":[],"multiselect":false,"name":"errors_permited","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"4","varType":1,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
@@ -49,5 +47,5 @@
     "path":"sprites/spr_card/spr_card.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

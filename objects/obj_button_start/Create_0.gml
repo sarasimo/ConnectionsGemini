@@ -1,6 +1,6 @@
 ///@description goto function
 click = function()
 {
-    room_goto_next();
+    room_goto(rm_gameboard);
 }
 

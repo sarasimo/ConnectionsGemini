@@ -1,3 +1,4 @@
+#macro AI_ACTIVE false
 #macro GAME_SPEED  game_get_speed(gamespeed_fps)
 
 PUZZLE_TEMPLATE = [
@@ -19,7 +20,7 @@ PUZZLE_TEMPLATE = [
     },
 ]
 
-globalvar word_array, active_puzzle, game_mode ; 
+globalvar word_array, active_puzzle, game_mode; 
 
 word_array = [];
 
@@ -44,10 +45,10 @@ active_puzzle = [
 
 enum gm 
 { 
-    solvable_game, nyt_companion
+    full_game, nyt_companion
 }
 
-game_mode = gm.solvable_game;
+game_mode = gm.full_game;
 
 enum card_img
 {

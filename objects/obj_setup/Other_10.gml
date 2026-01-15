@@ -1,7 +1,5 @@
 ///@description generate an array to use in creating a game board
 
-globalvar word_array;
-word_array = [];
 
 for (var i = 0; i < array_length(active_puzzle); i++)
 {

@@ -1,0 +1,2 @@
+///@description Randomise seed
+randomise();

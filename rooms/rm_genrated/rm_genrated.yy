@@ -7,6 +7,8 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_6E071E57","path":"rooms/rm_genrated/rm_genrated.yy",},
+    {"name":"inst_70A28650","path":"roomui/RoomUI/RoomUI.yy",},
+    {"name":"inst_EFE7920","path":"roomui/RoomUI/RoomUI.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -31,7 +33,7 @@
   "resourceType":"GMRoom",
   "resourceVersion":"2.0",
   "roomSettings":{
-    "Height":576,
+    "Height":720,
     "inheritRoomSettings":false,
     "persistent":false,
     "Width":1024,

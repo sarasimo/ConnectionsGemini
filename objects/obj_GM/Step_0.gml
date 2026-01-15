@@ -92,13 +92,19 @@ if (mouse_check_button_pressed(mb_right) && !mouse_check_button(mb_left))
 		guess_words[_idx] = noone;
 	    guess_cards[_idx] = noone;
 	    _inst.selected = false;
-		show_debug_message("deselected {0}", guess_words[_idx]);
-       
+		
+		show_debug_message("deselected {0}", guess_words[_idx]);      
     }
+	else _inst.image_index = card_img.black;
     
 }
 
-#region Colour change
+#region Change colour borders
+if device_mouse_check_button_pressed(0, mb_middle) 
+{
+    var _inst = collision_point(mouse_x,mouse_y, obj_card,0,0);
+	_inst.image_index = card_img.black;
+}
 
 if !(mouse_wheel_up() || mouse_wheel_down()) exit;
  

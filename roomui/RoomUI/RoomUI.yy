@@ -2,6 +2,21 @@
   "$GMRoomUI":"",
   "%Name":"RoomUI",
   "children":[
+    {"$GMRUILayer":"v1","%Name":"UI_MainGameRoom","alignItems":2,"children":[
+        {"$GMRFlexPanel":"","%Name":"GamePanel","alignContent":6,"alignItems":1,"children":[
+            {"$GMRInstance":"v4","%Name":"inst_70A28650","colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps","stretchHeight":true,"stretchWidth":true,},"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_70A28650","objectId":{"name":"obj_board","path":"objects/obj_board/obj_board.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
+          ],"flexDirection":0,"flexWrap":1,"height":{"unit":1,"value":565.0,},"justifyContent":0,"layoutDirection":1,"marginBottom":{"unit":1,"value":10.0,},"marginLeft":{"unit":1,"value":10.0,},"marginRight":{"unit":1,"value":10.0,},"marginTop":{"unit":1,"value":10.0,},"name":"GamePanel","nodeColour":4282970832,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":97.95,},},
+        {"$GMRFlexPanel":"","%Name":"MistakePanel","alignItems":4,"alignSelf":4,"children":[
+            {"$GMRFlexPanel":"","%Name":"Label","alignItems":1,"children":[
+                {"$GMRTextItem":"v3","%Name":"text_5EB9ECAB","alignment":0,"charSpacing":0.0,"colour":4279834905,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"fontId":{"name":"ft_UI_bold","path":"fonts/ft_UI_bold/ft_UI_bold.yy",},"frameH":0.0,"frameW":0.0,"frozen":false,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"lineSpacing":0.0,"name":"text_5EB9ECAB","paragraphSpacing":0.0,"resourceType":"GMRTextItem","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"text":"Mistakes :","wrap":false,"x":0.0,"y":0.0,},
+              ],"flexDirection":0,"height":{"unit":3,"value":32.0,},"justifyContent":1,"name":"Label","nodeColour":4289851976,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":3,"value":162.0,},},
+            {"$GMRFlexPanel":"","%Name":"FlexPanel_2","alignItems":2,"children":[
+                {"$GMRInstance":"v4","%Name":"inst_EFE7920","colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_EFE7920","objectId":{"name":"par_button","path":"objects/par_button/par_button.yy",},"properties":[
+                    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_button","path":"objects/par_button/par_button.yy",},"propertyId":{"name":"txt","path":"objects/par_button/par_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Submit\"",},
+                  ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
+              ],"flexDirection":0,"height":{"unit":3,"value":64.0,},"justifyContent":1,"name":"FlexPanel_2","nodeColour":4284434674,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":3,"value":128.0,},},
+          ],"flexDirection":2,"gapColumn":10.0,"height":{"unit":1,"value":100.0,},"justifyContent":3,"name":"MistakePanel","nodeColour":4294068450,"paddingLeft":{"unit":1,"value":32.0,},"paddingRight":{"unit":1,"value":32.0,},"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":100.0,},},
+      ],"flexDirection":2,"flexWrap":1,"gridX":8,"gridY":4,"justifyContent":0,"name":"UI_MainGameRoom","nodeColour":4294109000,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
     {"$GMRUILayer":"v1","%Name":"UI_oneOff","alignItems":2,"children":[
         {"$GMRFlexPanel":"","%Name":"FlexPanel","alignItems":2,"children":[
             {"$GMRFlexPanel":"","%Name":"FlexPanel_1","alignItems":2,"children":[
@@ -28,5 +43,5 @@
   "resourceType":"GMRoomUI",
   "resourceVersion":"2.0",
   "viewspaceChildren":[],
-  "visible":false,
+  "visible":true,
 }

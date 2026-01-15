@@ -1,1 +1,1 @@
-#macro GEMINI_API_KEY "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" //insert own key 
+#macro GEMINI_API_KEY "AIzaSyB7EjjOj3gCCCYZZALwmb9XQPsb6W1x3Zg" //insert own key 

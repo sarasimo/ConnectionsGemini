@@ -21,7 +21,7 @@ draw_self();
 //format text
 draw_set_color(c_black);
 if (selected) draw_set_color(c_white);
-draw_set_font(ft_UI);
+draw_set_font(ft_UI_bold);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 

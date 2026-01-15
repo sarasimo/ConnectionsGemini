@@ -3,10 +3,10 @@ if (array_length(word_array) <16)
 {
 	//test array
     word_array = [
-		"potato", "brain", "litter", "feature", 
-		"sixteen", "crepe paper", "prune", "talk", 
-		"tooth", "shar pei", "pepper"," film", 
-		"scatter"," sprinkle", "flick", "picture"]
+		"cereal", "static", "melted", "snow", 
+		"levitate", "salt", "patron", "shovel", 
+		"hose", "stationary", "spade"," jackal", 
+		"frozen"," rake", "dandruff", "still"]
 }
 
 //stores card instances to swap
@@ -14,8 +14,10 @@ dragged = noone;
 target = noone;
 
 ///Set grid size
-grid_w = room_width/columns;
-grid_h = room_height/rows;
+//flexpan
+grid_w = obj_board.sprite_width/columns;
+grid_h = obj_board.sprite_height/rows;
+offset = obj_board.x;
 
 var _n = 0; //keeps track of words read from the array
 
@@ -37,13 +39,21 @@ for (var c = 0; c <columns; c++)
     board_x[c] = _inst.x;
 }
 
-globalvar guess_words, guess_cards, categories_found, category_color;
+globalvar guess_words, guess_cards, categories_found, category_color, prev_guesses;
 guess_words = array_create(4, noone);
 guess_cards = array_create(4, noone);
 
 category_color = noone;
 categories_found = 0;
-errors_permited = 4;
-
+errors_remaining = errors_permited;
+prev_guesses = [];
 
 show_debug_message("brdx {0}, brd y {1}", board_x, board_y );
+
+//get main panel (same as layer)
+var _UI = layer_get_flexpanel_node("UI_MainGameRoom");
+
+/*
+//get child panels
+var _fp = flexpanel_node_get_child(flexpanel_node_get_child(_UI, "MistakePanel"), "Label");
+flex_pos = flexpanel_node_layout_get_position(_fp);

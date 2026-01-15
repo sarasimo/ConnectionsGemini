@@ -1,7 +1,7 @@
 ///@description draw solved banner
-var
+
 var _sw, _sh;
-_sw = room_width
+_sw = obj_board.sprite_width;
 _sh = obj_GM.grid_h;
 
 draw_sprite_stretched_ext(spr_card,card_img.white,x,y,_sw,_sh, image_blend, image_alpha);
