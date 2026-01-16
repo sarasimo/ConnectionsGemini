@@ -1,9 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"obj_board",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_board",
   "overriddenProperties":[],
@@ -34,5 +32,5 @@
     "path":"sprites/spr_banner/spr_banner.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

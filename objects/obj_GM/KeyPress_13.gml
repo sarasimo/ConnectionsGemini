@@ -60,6 +60,7 @@ function reposition_matched_card(_element, _index)
     	
 	instance_destroy(_element);
 	var _banner = instance_create_depth(board_x[0],board_y[categories_found],depth, obj_banner, active_puzzle[category_color])
+    category_hintShown[category_color] = true; 
 	with (_banner) col_index = category_color;
 
 }
