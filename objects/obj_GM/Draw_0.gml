@@ -4,16 +4,20 @@ var _x, _spr;
 _x = x;
 _spr = spr_card;
 
+//draw fill
 for (var i = 0; i < errors_remaining; i++) 
 {
-	draw_sprite(_spr, 6, _x,y);
+	draw_sprite(_spr, card_img.white, _x,y);
     _x += sprite_get_width(_spr)*1.5;
 }
 
+//Draw Containers
 _x = x;
 for (var i = 0; i < errors_permited; i++) 
 {
-	draw_sprite(_spr, 0, _x,y);
+	if (i >= errors_remaining) alpha = 0.8;
+    else alpha = 1;
+    draw_sprite_ext(_spr, card_img.yellow, _x,y, 1,1, 0, c_gray, alpha);
     _x += sprite_get_width(_spr)*1.5;
 }
 	

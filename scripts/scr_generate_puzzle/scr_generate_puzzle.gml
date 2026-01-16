@@ -9,10 +9,13 @@ function scr_request_puzzle()
     
     /// -d
     var _prompt = "You are generating content for a game inspired by the NYT games Connections." +
-                    "\n You need to create 4 categories each containing 4 different words." +
-                    "\n The same word should never appear in more than 1 group." +
+                    "\n You need to create 4 categories each containing 4 different words/concepts." +
+                    "\n The same words should never appear in more than 1 group." +
+                    "\n Words/Concepts in this case can be single words, hyphyinated words and 2 word phrases like -shut up or come on" +
                     "\n Each category should get slightly more challenging than the one prior." +
-                    "\n Response should be formated as follows" + json_stringify(global.PUZZLE_TEMPLATE);
+                    "\n Categories can be made up of homophones, synonyms, trivia, words hidden within longer words ect" +
+                    "\n Optionally increase difficulty by including red herrings ie words from different group that look like they can be in the same category" +
+                    "\n Response should be formated as follows \n" + json_stringify(global.PUZZLE_TEMPLATE);
     var _data = {
                     contents: 
                     [ {

@@ -39,7 +39,7 @@ for (var c = 0; c <columns; c++)
     board_x[c] = _inst.x;
 }
 
-globalvar guess_words, guess_cards, categories_found, category_color; //prev_guesses;
+globalvar guess_words, guess_cards, categories_found, category_color, hints_used;// prev_guesses;
 guess_words = array_create(4, noone);
 guess_cards = array_create(4, noone);
 

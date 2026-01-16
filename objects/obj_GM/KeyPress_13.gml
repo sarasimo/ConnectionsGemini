@@ -1,6 +1,7 @@
 ///@description Submit selection
 
-if game_mode = gm.nyt_companion || !errors_remaining exit;
+if game_mode = gm.nyt_companion exit;
+//if !errors_remaining exit;
 
 show_debug_message($"ev {event_type} num {event_number}");
 
@@ -13,11 +14,39 @@ if (array_get_index(guess_words, noone) != -1)
     exit;
 }
 
-if (array_get_index(prev_guesses, guess_words) != -1)
+
+
+show_debug_message($"current {guess_words} prev {prev_guesses}");
+//Cycle through  previous guesses
+for(var pg = 0; pg < array_length(prev_guesses); pg++ )
 {
-    var _str = "ALREADY GUESSED!!";
-    show_debug_message(_str);
-    exit;
+    show_debug_message("Checking Guess {0}", pg);
+    var matches = 0;
+    
+    //Cycle through user's guesses
+    for(var guess = 0; guess <array_length(guess_words); guess++ )
+    {        
+		
+		//compare each guess word against past guess
+        if array_contains(prev_guesses[pg], guess_words[guess])
+        {
+            matches += 1;
+            show_debug_message("Guess num {0} match {1}", prev_guesses[pg], guess_words[guess]);
+            if (matches == 4)
+            {
+                var _str = "Already Guessed!";
+                show_debug_message(_str);
+                exit;
+            }
+        }
+        else 
+        {
+            show_debug_message("Category {0} no match {1}", pg, guess_words[guess]);
+            guess = 3;
+        }
+        
+    }
+    
 }
 
 
@@ -115,8 +144,13 @@ for(var category = 0; category < array_length(active_puzzle); category++ )
         
 }
 
+
 //save guess 
-array_push(prev_guesses, guess_words);
+var temp_array = [];
+array_copy(temp_array,0, guess_words,0, array_length(guess_words));
+array_push(prev_guesses, temp_array);
+
+//alarm[1] = 1;
 
 if (!errors_remaining)
 {
