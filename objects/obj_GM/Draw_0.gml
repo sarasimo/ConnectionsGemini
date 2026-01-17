@@ -1,4 +1,7 @@
 ///@description Draw mistake pips
+
+if game_mode = gm.nyt_companion exit;
+
 var _x, _spr;
 
 _x = x;
@@ -17,7 +20,7 @@ for (var i = 0; i < errors_permited; i++)
 {
 	if (i >= errors_remaining) alpha = 0.8;
     else alpha = 1;
-    draw_sprite_ext(_spr, card_img.yellow, _x,y, 1,1, 0, c_gray, alpha);
+    draw_sprite_ext(_spr, card_img.yellow, _x,y, 1,1, 0, c_ltgray, alpha);
     _x += sprite_get_width(_spr)*1.5;
 }
 	

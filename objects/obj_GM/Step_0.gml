@@ -11,15 +11,35 @@ if (mouse_check_button_pressed(mb_left))
 	}
 }
 
+//move with mouse
+if (mouse_check_button(mb_left) && dragged != noone) with (dragged)
+{	
+	x = mouse_x + dx;
+	y = mouse_y + dy;
+}
+
 if (mouse_check_button_released(mb_left)) 
 {
 	with (dragged)
 	{
-		#region click a card - no drag
+		#region CLICK A CARD - NO DRAG
         
-	    if (x == last_x && y == last_y)
+        if point_distance(x,y, last_x,last_y) < 4  //if (x == last_x && y == last_y)
 		{
 
+            //Remove card from selecion
+            if (selected)
+            {
+        		var _idx = array_get_index(guess_words, txt);
+        		guess_words[_idx] = noone;
+        	    guess_cards[_idx] = noone;
+        	    selected = false;
+        		
+        		show_debug_message("deselected {0}", guess_words[_idx]); 
+                exit;     
+            }
+        	
+            //Add card to selection
             for (var i = 0; i< array_length(guess_words); i++) 
             {
                 if (guess_words[i] == noone)
@@ -36,7 +56,7 @@ if (mouse_check_button_released(mb_left))
         
         #endregion
         
-		#region drag card to new position
+		#region DRAG A CARD TO NEW POSITION
         
         var _t = collision_point(mouse_x,mouse_y, obj_card,0,true);
 		if (_t != noone) //if on top of other card
@@ -71,13 +91,6 @@ if (mouse_check_button_released(mb_left))
 	dragged = noone;
 }
 
-//move with mouse
-if (mouse_check_button(mb_left) && dragged != noone) with (dragged)
-{	
-	x = mouse_x + dx;
-	y = mouse_y + dy;
-}
-
 
 
 //deselect cards
@@ -85,7 +98,8 @@ if (mouse_check_button_pressed(mb_right) && !mouse_check_button(mb_left))
 {
     var _inst = collision_point(mouse_x,mouse_y, obj_card,0,0); 
     
-	if (!_inst) exit;
+	if (_inst == noone) exit;
+    
     if (_inst.selected)
     {
 		var _idx = array_get_index(guess_words, _inst.txt);

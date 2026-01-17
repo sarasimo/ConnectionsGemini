@@ -1,22 +1,22 @@
-#macro AI_ACTIVE false
+#macro AI_ACTIVE true
 #macro GAME_SPEED  game_get_speed(gamespeed_fps)
 
 PUZZLE_TEMPLATE = [
     {
-        category : "category1 name",
-        words : ["word1", "word2", "word3", "word4" ]
+        category : "CATEGORY1 NAME",
+        words : ["WORD1", "WORD2", "WORD3", "WORD4" ]
     },
     {
-        category : "category2 name",
-        words : ["word1", "word2", "word3", "word4" ]
+        category : "CATEGORY2 NAME",
+        words : ["WORD1", "WORD2", "WORD3", "WORD4" ]
     },
     {
-        category : "category3 name",
-        words : ["word1", "word2", "word3", "word4" ]
+        category : "CATEGORY3 NAME",
+        words : ["WORD1", "WORD2", "WORD3", "WORD4" ]
     },
     {
-        category : "category4 name",
-        words : ["word1", "word2", "word3", "word4" ]
+        category : "CATEGORY4 NAME",
+        words : ["WORD1", "WORD2", "WORD3", "WORD4" ]
     },
 ]
 
