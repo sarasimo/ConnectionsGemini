@@ -1,4 +1,4 @@
-function scr_request_puzzle()
+function scr_request_puzzle(_prompt)
 {
     var _url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
     var _map = ds_map_create();
@@ -7,15 +7,7 @@ function scr_request_puzzle()
     ds_map_add(_map, "x-goog-api-key", GEMINI_API_KEY);
     ds_map_add(_map, "Content-Type", "application/json")
     
-    /// -d
-    var _prompt = "You are generating content for a game inspired by the NYT games Connections." +
-                    "\n You need to create 4 categories each containing 4 different words/concepts." +
-                    "\n The same words should never appear in more than 1 group." +
-                    "\n Words/Concepts in this case can be single words, hyphyinated words and 2 word phrases like -shut up or come on" +
-                    "\n Each category should get slightly more challenging than the one prior." +
-                    "\n Categories can be made up of homophones, synonyms, trivia, words hidden within longer words ect" +
-                    "\n Optionally increase difficulty by including red herrings ie words from different group that look like they can be in the same category" +
-                    "\n Response should be formated as follows \n" + json_stringify(global.PUZZLE_TEMPLATE);
+    /// -d 
     var _data = {
                     contents: 
                     [ {
@@ -23,7 +15,10 @@ function scr_request_puzzle()
                         [ {
                             text: _prompt, 
                         } ] 
-                    } ]
+                    } ],
+                    // THIS PART ENABLES GROUNDING
+                    tools: 
+                    [ { "google_search": {} } ]
                 }
     
     //////////////////////////////// -X //// -H /////// -d ////////////

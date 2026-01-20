@@ -11,5 +11,5 @@ row = 4; //number of words displayed per row
 //center object 
 x = room_width/2;
 
-game_mode = gm.nyt_companion;
+game_mode = gm.manual_entry;
 

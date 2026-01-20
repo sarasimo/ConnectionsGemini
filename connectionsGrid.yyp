@@ -37,7 +37,6 @@
     {"id":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},},
     {"id":{"name":"obj_GM","path":"objects/obj_GM/obj_GM.yy",},},
     {"id":{"name":"obj_guessChecker","path":"objects/obj_guessChecker/obj_guessChecker.yy",},},
-    {"id":{"name":"obj_import","path":"objects/obj_import/obj_import.yy",},},
     {"id":{"name":"obj_input","path":"objects/obj_input/obj_input.yy",},},
     {"id":{"name":"obj_setup","path":"objects/obj_setup/obj_setup.yy",},},
     {"id":{"name":"obj_viewManager","path":"objects/obj_viewManager/obj_viewManager.yy",},},

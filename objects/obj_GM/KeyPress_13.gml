@@ -1,6 +1,6 @@
 ///@description Submit selection
 
-if game_mode = gm.nyt_companion exit;
+if game_mode = gm.manual_entry exit;
 //if !errors_remaining exit;
 
 show_debug_message($"ev {event_type} num {event_number}");

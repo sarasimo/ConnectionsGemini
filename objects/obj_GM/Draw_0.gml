@@ -1,6 +1,6 @@
 ///@description Draw mistake pips
 
-if game_mode = gm.nyt_companion exit;
+if game_mode = gm.manual_entry exit;
 
 var _x, _spr;
 

@@ -45,10 +45,10 @@ active_puzzle = [
 
 enum gm 
 { 
-    full_game, nyt_companion
+    ai_game, nyt_companion, manual_entry
 }
 
-game_mode = gm.full_game;
+game_mode = gm.ai_game;
 
 enum card_img
 {
