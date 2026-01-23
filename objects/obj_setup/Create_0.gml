@@ -1,9 +1,9 @@
 ///@description Prompt AI
 var _prompt;
 
-var day = date_current_day(date_selected);
-var month = date_current_month(date_selected);
-var year = date_current_year(date_selected);
+var day = date_get_day(date_selected);
+var month = date_get_month(date_selected);
+var year = date_get_year(date_selected);
 
 if AI_ACTIVE
 {

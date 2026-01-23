@@ -1,6 +1,5 @@
 ///@description change colour
 
-
 switch (col_index)
 {
 	default: image_blend = c_white; break;
@@ -13,4 +12,8 @@ switch (col_index)
         
 }
 
+alarm[1] = 0;
+speed = 0;
+x = last_x;
+y = last_y;
 //if (selected) image_blend = c_dkgray;

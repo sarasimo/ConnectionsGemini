@@ -1,2 +1,2 @@
-///@description custom per child
+///@description custom per child object
 

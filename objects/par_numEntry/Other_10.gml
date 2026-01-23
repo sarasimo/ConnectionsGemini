@@ -1,7 +1,7 @@
 ///@description Make fields inactive
 
 if (obj_dayEntry.txt == current_day && obj_monthEntry.txt == current_month && obj_yearEntry.txt = current_year)
-        date_selected = date_current_datetime();
+    date_selected = date_current_datetime();
 else 
     date_selected = date_create_datetime(obj_yearEntry.txt, obj_monthEntry.txt, obj_dayEntry.txt , 12,0,0);
 

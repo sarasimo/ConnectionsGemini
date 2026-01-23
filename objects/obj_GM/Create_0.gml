@@ -39,7 +39,7 @@ for (var c = 0; c <columns; c++)
     board_x[c] = _inst.x;
 }
 
-globalvar guess_words, guess_cards, categories_found, category_color, hints_used;// prev_guesses;
+globalvar guess_words, guess_cards, categories_found, category_color, hints_used,prev_guesses;
 guess_words = array_create(4, noone);
 guess_cards = array_create(4, noone);
 
@@ -48,6 +48,8 @@ categories_found = 0;
 errors_remaining = errors_permited;
 prev_guesses = [];
 category_hintShown = array_create(4,false);
+category_isSolved = array_create(4,false);
+
 hints_used = 0;
 
 show_debug_message("brdx {0}, brd y {1}", board_x, board_y );

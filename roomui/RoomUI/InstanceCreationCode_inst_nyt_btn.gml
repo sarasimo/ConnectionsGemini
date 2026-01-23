@@ -1,3 +1,5 @@
+date_selected = date_current_datetime();
+
 click = function ()
 {
     game_mode = gm.nyt_companion;
