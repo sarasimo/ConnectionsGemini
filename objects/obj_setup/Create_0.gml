@@ -1,5 +1,9 @@
-///@description
+///@description Prompt AI
 var _prompt;
+
+var day = date_current_day(date_selected);
+var month = date_current_month(date_selected);
+var year = date_current_year(date_selected);
 
 if AI_ACTIVE
 {
@@ -18,10 +22,11 @@ if AI_ACTIVE
         
         case gm.nyt_companion:
         _prompt = "You are genarating a json for a program that will give extra hints to the NYT Game connections." +
-        $" Provide the solution of the NYT game Connections for day:{19} month:{current_month} year: {current_year}" +
+        $" Provide the solution of the NYT game Connections for day:{day} month:{month} year: {year}" +
                     "\n Response should be formated as follows \n" + json_stringify(global.PUZZLE_TEMPLATE);
         break;
         
+        //test prompt
         case 5: _prompt = "what is the date today?"
     }
     

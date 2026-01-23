@@ -20,7 +20,9 @@ PUZZLE_TEMPLATE = [
     },
 ]
 
-globalvar word_array, active_puzzle, game_mode; 
+globalvar date_selected, date_current, word_array, active_puzzle, game_mode;
+
+date_current  = date_current_datetime();
 
 word_array = [];
 
@@ -54,3 +56,9 @@ enum card_img
 {
     black, yellow, green, blue, purple, white, gray,
 }
+
+enum M
+{
+    jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
+}
+

@@ -12,8 +12,11 @@
     {"name":"inst_deselectBtn","path":"roomui/RoomUI/RoomUI.yy",},
     {"name":"inst_134CE0E8","path":"roomui/RoomUI/RoomUI.yy",},
     {"name":"inst_2C42817C","path":"roomui/RoomUI/RoomUI.yy",},
-    {"name":"inst_nyt","path":"roomui/RoomUI/RoomUI.yy",},
+    {"name":"inst_day","path":"roomui/RoomUI/RoomUI.yy",},
+    {"name":"inst_year","path":"roomui/RoomUI/RoomUI.yy",},
+    {"name":"inst_month","path":"roomui/RoomUI/RoomUI.yy",},
     {"name":"inst_genAI","path":"roomui/RoomUI/RoomUI.yy",},
+    {"name":"inst_nyt_btn","path":"roomui/RoomUI/RoomUI.yy",},
   ],
   "isDnd":false,
   "layers":[
