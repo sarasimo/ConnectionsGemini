@@ -1,4 +1,5 @@
 ///@description Modify  min/max values
+min_val = 1;
 
 switch (obj_monthEntry.txt) 
 {

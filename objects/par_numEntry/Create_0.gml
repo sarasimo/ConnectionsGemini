@@ -1,6 +1,7 @@
 ///@description
 isActive = false;
-image_blend = c_grey;
+isHovering = false;
+image_blend = c_dkgrey;
 
 txt = default_val;
 

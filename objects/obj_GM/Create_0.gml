@@ -56,7 +56,7 @@ show_debug_message("brdx {0}, brd y {1}", board_x, board_y );
 
 //get main panel (same as layer)
 var _UI = layer_get_flexpanel_node("UI_MainGameRoom");
-
+//room_persistent = true;
 /*
 //get child panels
 var _fp = flexpanel_node_get_child(flexpanel_node_get_child(_UI, "MistakePanel"), "Label");

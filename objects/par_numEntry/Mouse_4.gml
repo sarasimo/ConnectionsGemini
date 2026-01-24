@@ -1,6 +1,6 @@
 ///@description active self and disable others
 
-keyboard_string = "";
+keyboard_string = txt;
 
 event_user(0);
 

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_generate_puzzle",
+  "%Name":"scr_AI",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_generate_puzzle",
+  "name":"scr_AI",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

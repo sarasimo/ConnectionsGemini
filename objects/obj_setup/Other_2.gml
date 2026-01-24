@@ -1,2 +1,2 @@
 ///@description Randomise seed
-randomise();
+

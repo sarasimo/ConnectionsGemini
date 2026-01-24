@@ -2,11 +2,12 @@
 var _prompt;
 
 var day = date_get_day(date_selected);
-var month = date_get_month(date_selected);
+var month = 5 //date_get_month(date_selected);
 var year = date_get_year(date_selected);
 
 if AI_ACTIVE
 {
+    randomise();
     switch (game_mode)
     {
         case gm.ai_game: 
@@ -38,4 +39,4 @@ if AI_ACTIVE
 }
 
 //uses local puzzle for testing
-event_user(0);
+event_user(0); 

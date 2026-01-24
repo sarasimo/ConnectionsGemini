@@ -1,7 +1,12 @@
 ///@description Submit selection
 
 if game_mode = gm.manual_entry exit;
-//if !errors_remaining exit;
+if !errors_remaining 
+{
+    n = 0;
+    alarm[1] = GAME_SPEED*reveal_time;
+    exit;
+}
 
 show_debug_message($"ev {event_type} num {event_number}");
 
@@ -99,6 +104,8 @@ function reposition_matched_card(_element, _index)
 }
 
 //Cycle through each category
+var catFound = false;
+
 for(var category = 0; category < array_length(active_puzzle); category++ )
 {
     show_debug_message("Checking category {0}", category);
@@ -120,7 +127,9 @@ for(var category = 0; category < array_length(active_puzzle); category++ )
                 array_foreach(guess_cards, reposition_matched_card);
                 categories_found += 1;
                 guess_words = array_create(4, noone);
-                exit;
+                catFound = true;
+                break;
+
             }
         }
         else 
@@ -138,9 +147,10 @@ for(var category = 0; category < array_length(active_puzzle); category++ )
         alarm[0] = msg_time_sec * GAME_SPEED;
     }
 	
-	if (category == array_length(active_puzzle)-1)
+	if (category == array_length(active_puzzle)-1 && !catFound)
 	{
-	    errors_remaining --;
+	    show_debug_message($"matches {matches}")
+        errors_remaining --;
         array_foreach(guess_cards, function(_card, _index) 
         {
             with (_card)
@@ -167,14 +177,27 @@ array_copy(temp_array,0, guess_words,0, array_length(guess_words));
 array_push(prev_guesses, temp_array);
 
 
-if (errors_remaining) exit;
 
-n = 0;
-alarm[1] = GAME_SPEED*reveal_time;
+if (errors_remaining && categories_found < 4) exit;
 
+
+with (par_button)
+{
+    switch (txt) 
+    {
+    	default: instance_deactivate_object(self); break;
+        case  "Submit": 
+            if (categories_found < 4) txt = "Reveal"; 
+            else txt = "Next";
+        break;
+        case "Back": //no action
+        break;
+    }
+
+}
 show_debug_message("GAME_OVER!!")
 
-/*
+/* //Reveal unguessed 
 for (var i = 0; i < array_length(category_isSolved); i++) 
 {
     var answer_cards = array_create(0);

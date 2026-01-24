@@ -8,6 +8,7 @@
   "name":"obj_monthEntry",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_numEntry","path":"objects/par_numEntry/par_numEntry.yy",},"propertyId":{"name":"field_name","path":"objects/par_numEntry/par_numEntry.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"M",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_numEntry","path":"objects/par_numEntry/par_numEntry.yy",},"propertyId":{"name":"max_val","path":"objects/par_numEntry/par_numEntry.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"12",},
   ],
   "parent":{
     "name":"date_fields",

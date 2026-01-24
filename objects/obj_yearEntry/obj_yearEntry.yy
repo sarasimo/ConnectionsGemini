@@ -8,6 +8,7 @@
   "name":"obj_yearEntry",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_numEntry","path":"objects/par_numEntry/par_numEntry.yy",},"propertyId":{"name":"field_name","path":"objects/par_numEntry/par_numEntry.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Y",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_numEntry","path":"objects/par_numEntry/par_numEntry.yy",},"propertyId":{"name":"max_digits","path":"objects/par_numEntry/par_numEntry.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"4",},
   ],
   "parent":{
     "name":"date_fields",

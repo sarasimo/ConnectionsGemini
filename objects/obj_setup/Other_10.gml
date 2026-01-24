@@ -1,5 +1,6 @@
 ///@description generate an array to use in creating a game board
 
+word_array = array_create(0);
 
 for (var i = 0; i < array_length(active_puzzle); i++)
 {

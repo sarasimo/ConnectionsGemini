@@ -3,7 +3,7 @@
 if (mouse_check_button_pressed(mb_left))
 {
     dragged = collision_point(mouse_x,mouse_y, obj_card,0,0);
-    show_debug_message("dragged {0}", dragged);
+    //show_debug_message("dragged {0}", dragged);
     if (dragged != noone) with (dragged)
 	{
 	    dx = x - mouse_x;

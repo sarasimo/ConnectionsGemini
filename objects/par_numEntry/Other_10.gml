@@ -10,5 +10,5 @@ show_debug_message($"d:{date_get_day(date_selected)} m: {date_get_month(date_sel
 with (par_numEntry) 
 {
     isActive = false;
-    image_blend = c_gray;
+    image_blend = c_dkgray;
 }
