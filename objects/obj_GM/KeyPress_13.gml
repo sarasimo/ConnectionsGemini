@@ -12,7 +12,7 @@ show_debug_message($"ev {event_type} num {event_number}");
 
 #region Check guess submission
 
-if (array_get_index(guess_words, noone) != -1)
+if (array_contains(guess_words, noone))
 {
     var _str = "Select 4 words before submitting";
     show_debug_message(_str);
@@ -56,6 +56,10 @@ for(var pg = 0; pg < array_length(prev_guesses); pg++ )
     
 }
 
+//save guess 
+var temp_array = [];
+array_copy(temp_array,0, guess_words,0, array_length(guess_words));
+array_push(prev_guesses, temp_array);
 
 #endregion
 
@@ -132,10 +136,6 @@ for(var category = 0; category < array_length(active_puzzle); category++ )
 
             }
         }
-        else 
-        {
-            //show_debug_message("Category {0} no match {1}", category, guess_words[guess]);
-        }
         
     }
     
@@ -171,12 +171,6 @@ for(var category = 0; category < array_length(active_puzzle); category++ )
 }
 
 
-//save guess 
-var temp_array = [];
-array_copy(temp_array,0, guess_words,0, array_length(guess_words));
-array_push(prev_guesses, temp_array);
-
-
 
 if (errors_remaining && categories_found < 4) exit;
 
@@ -188,7 +182,14 @@ with (par_button)
     	default: instance_deactivate_object(self); break;
         case  "Submit": 
             if (categories_found < 4) txt = "Reveal"; 
-            else txt = "Next";
+            else 
+            {
+                txt = "Next";
+                click = function ()
+                {
+                    room_goto(rm_result);
+                }
+            }
         break;
         case "Back": //no action
         break;

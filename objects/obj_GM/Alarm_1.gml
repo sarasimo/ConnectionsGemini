@@ -20,4 +20,14 @@ if (n < array_length(category_isSolved)-1)
     alarm[1] = GAME_SPEED*reveal_time;
     n++
 }
-
+else with (par_button)
+{
+	 if (txt = "Reveal") 
+    {
+        txt = "Next";
+        click = function ()
+        {
+            room_goto(rm_result);
+        }
+    }
+}

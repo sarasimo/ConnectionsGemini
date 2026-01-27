@@ -17,8 +17,8 @@
   "name":"obj_GM",
   "overriddenProperties":[],
   "parent":{
-    "name":"ControlObjects",
-    "path":"folders/ControlObjects.yy",
+    "name":"date_fields",
+    "path":"folders/date_fields.yy",
   },
   "parentObjectId":null,
   "persistent":false,
