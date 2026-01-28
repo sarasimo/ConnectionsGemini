@@ -10,7 +10,8 @@ for (var pg = 0; pg < array_length(prev_guesses); pg++)
         {
             if array_contains(active_puzzle[c].words, prev_guesses[pg][w])
             {
-                draw_sprite_stretched(spr_resultSquare, c, _x,_y, cell_size, cell_size)
+                //draw_sprite_stretched(spr_resultSquare, c, _x,_y, cell_size, cell_size)
+                draw_sprite_stretched_ext(spr_card, 5, _x, _y, cell_size, cell_size, colours[c], 1);
                 _x += cell_size ;
             }
         }

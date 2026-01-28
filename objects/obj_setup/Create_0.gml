@@ -2,7 +2,7 @@
 var _prompt;
 
 var day = date_get_day(date_selected);
-var month = 5 //date_get_month(date_selected);
+var month = date_get_month(date_selected);
 var year = date_get_year(date_selected);
 
 if AI_ACTIVE
