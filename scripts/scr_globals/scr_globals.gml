@@ -1,4 +1,4 @@
-#macro AI_ACTIVE 0
+#macro AI_ACTIVE 1
 #macro GAME_SPEED  game_get_speed(gamespeed_fps)
 
 PUZZLE_TEMPLATE = [

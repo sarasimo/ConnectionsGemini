@@ -21,6 +21,7 @@ function scr_request_puzzle(_prompt)
                     [ { "google_search": {} } ]
                 }
     
+    
     //////////////////////////////// -X //// -H /////// -d ////////////
     request_id = http_request(_url, "POST", _map, json_stringify(_data));
     
@@ -35,6 +36,11 @@ function scr_request_puzzle(_prompt)
       -H 'Content-Type: application/json' \
       -X POST \  
       -d '{
+        "system_instruction": {
+            "parts": [
+              {"text": "You are a friendly pirate."}
+            ]
+        }
         "contents": [
           {
             "parts": [
