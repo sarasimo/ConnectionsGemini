@@ -1,7 +1,7 @@
 ///@description Keeps a number in range. Goes to highest position value is under min. Goes to min postiton if max is exceeded
 ///@param {real} value the value being clamped
-///@param {real} min the lowest value can get
-///@param {real} max the highest value can get
+///@param {real} min the lowest value can get to
+///@param {real} max the highest value can get to
 function clamp_cycle(_n, _min, _max)
 {
     if (_n < _min) _n = _max;

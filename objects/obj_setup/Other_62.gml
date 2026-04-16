@@ -80,11 +80,13 @@ for (var i = 0; i < _size; i++)
         
         active_puzzle = json_parse(_json);
         
-        #region Saves Generated puzzle to a file
+        /*
+        #region Saves Generated puzzles to a file
             var _txtFile = "gemini_puzzles.txt";
             var _file = file_text_open_append(working_directory + _txtFile);  
             file_text_write_string(_file, "," + _str );
             file_text_close(_file);
+         */
         #endregion
         
         

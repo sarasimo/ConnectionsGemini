@@ -26,4 +26,4 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 //draw text box
-draw_text_ext(x+_sw/2,y+_sh/2, txt, 8, _sw-_sw/6)
+draw_text_ext(x+_sw/2,y+_sh/2.5, txt, 0, _sw-_sw/6)

@@ -26,6 +26,7 @@ date_current  = date_current_datetime();
 
 word_array = [];
 
+
 active_puzzle = [
   {
     "category": "Desk Items",
@@ -57,8 +58,5 @@ enum card_img
     black, yellow, green, blue, purple, white, gray,
 }
 
-enum M
-{
-    jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
-}
+
 

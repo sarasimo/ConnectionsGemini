@@ -57,7 +57,7 @@ Temporary Items
 # GameMaker temporary files
 *.resource_order
 *.old
-scripts/macros/macros.gml
-scripts/macros/macros.yy
-scripts/API_key_macro/API_key_macro.gml
 
+/scripts/API_key_macro/
+/scripts/API_key
+scripts/API_key_macro/API_key_macro.gml
