@@ -1,26 +1,30 @@
-function scr_request_puzzle(_prompt)
+function scr_request_puzzle(prompt, cache_id = noone)
 {
-    var _url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
+    var _url = "https://connections.saragalea91.workers.dev";
+    //"https://gateway.ai.cloudflare.com/v1/a5b1ece20b8a8b6f068b8587f955b4fa/my_connections_gateway/google-ai-studio/v1beta/models/gemini-2.5-flash:generateContent"
     var _map = ds_map_create();
     
     /// Header (-H)
-    ds_map_add(_map, "x-goog-api-key", GEMINI_API_KEY);
-    ds_map_add(_map, "Content-Type", "application/json")
+    //ds_map_add(_map, "cf-aig-authorization", $"Bearer {API_KEY}");
+    ds_map_add(_map, "Content-Type", "application/json");
+    //ds_map_add(_map, "cf-aig-byok-alias", "connectionsAI");
     
-    /// -d 
-    var _data = {
-                    contents: 
-                    [ {
-                        parts: 
-                        [ {
-                            text: _prompt, 
-                        } ] 
-                    } ],
-                    // THIS PART ENABLES GROUNDING
-                    tools: 
-                    [ { "google_search": {} } ]
-                }
+    /// -d  (will be converted to json string)
+    var _data = 
+    {
+        contents: 
+        [ {
+            parts: 
+            [ {
+                text: prompt, 
+            } ] 
+        } ],
+        // THIS PART ENABLES GROUNDING
+        tools: [ { "google_search": {} } ],
+        
+    };
     
+    if (cache_id) struct_set(_data, "cache_key", cache_id);
     
     //////////////////////////////// -X //// -H /////// -d ////////////
     request_id = http_request(_url, "POST", _map, json_stringify(_data));
@@ -29,15 +33,15 @@ function scr_request_puzzle(_prompt)
     show_debug_message("data{0}", json_stringify(_data));
     //show_debug_message("requset {0}", request_id);
     
-    /* Refernce from API -- REST --
+    /* Refernce from API 
      * 
-    curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent" \
-      -H "x-goog-api-key: $GEMINI_API_KEY" \
-      -H 'Content-Type: application/json' \
-      -X POST \  
-      -d '{
-        "system_instruction": {
-            "parts": [
+    curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent" \  >>> add to var _url
+      -H "x-goog-api-key: $GEMINI_API_KEY" \                >>> ds_map_add(_map, "x-goog-api-key", API_KEY);
+      -H 'Content-Type: application/json' \                 >>> ds_map_add(_map, "Content-Type", "application/json")
+      -X POST \                                             >>> make method parameter in http_request
+      -d '{                                                 >>> create data (-d) field as struct
+        "system_instruction": {                                
+            "parts": [                                     
               {"text": "You are a friendly pirate."}
             ]
         }
@@ -49,6 +53,7 @@ function scr_request_puzzle(_prompt)
               }
             ]
           }
+        "tools": [ { "google_search": {} } ]
         ]
       }'
      * 

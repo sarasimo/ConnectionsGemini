@@ -21,6 +21,7 @@
     {"name":"inst_board","path":"roomui/RoomUI/RoomUI.yy",},
     {"name":"inst_7DCD7A49_1","path":"rooms/rm_genrated/rm_genrated.yy",},
     {"name":"inst_69C741A3","path":"roomui/RoomUI/RoomUI.yy",},
+    {"name":"inst_errorContainer","path":"roomui/RoomUI/RoomUI.yy",},
   ],
   "isDnd":false,
   "layers":[

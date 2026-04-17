@@ -45,7 +45,7 @@ for (var i = 0; i < _size; i++)
         
         
         var _returned = json_parse(async_load[? _key]);
-        //show_debug_message(_returned);
+        show_debug_message(_returned);
         if variable_struct_exists(_returned, "error")
         {
             show_debug_message(_returned.error.message);
@@ -72,7 +72,8 @@ for (var i = 0; i < _size; i++)
         
         if (_json == noone) 
         {
-            show_debug_message($"Failed to find puzzle for the date chosen!");
+            status = "Failed to find puzzle for the date chosen!"
+            show_debug_message(status);
             event_user(1);
             exit;
         }

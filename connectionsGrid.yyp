@@ -28,6 +28,7 @@
   },
   "name":"connectionsGrid",
   "resources":[
+    {"id":{"name":"ft_error","path":"fonts/ft_error/ft_error.yy",},},
     {"id":{"name":"ft_small","path":"fonts/ft_small/ft_small.yy",},},
     {"id":{"name":"ft_UI_bold","path":"fonts/ft_UI_bold/ft_UI_bold.yy",},},
     {"id":{"name":"ft_UI","path":"fonts/ft_UI/ft_UI.yy",},},

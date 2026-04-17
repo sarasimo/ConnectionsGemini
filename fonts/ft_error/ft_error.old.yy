@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"ft_small",
+  "%Name":"ft_error",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":11,
@@ -118,7 +118,7 @@
   "last":0,
   "lineHeight":16,
   "maintainGms1Font":false,
-  "name":"ft_small",
+  "name":"ft_error",
   "parent":{
     "name":"Cards",
     "path":"folders/Cards.yy",
