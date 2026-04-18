@@ -29,7 +29,7 @@ if (AI_ACTIVE)
         _prompt = "You are genarating a json for a program that will give extra hints to the NYT Game connections." +
         $" Provide the solution of the NYT game Connections for day:{day} month:{month} year: {year}" +
                     "\n Response should be formated as follows \n" + json_stringify(global.PUZZLE_TEMPLATE);
-        _cache_id = $"{day}/{month}/{year}"
+        _cache_id = $"{day}_{month}_{year}"
         break;
         
         //test prompt

@@ -1,7 +1,7 @@
 function scr_request_puzzle(prompt, cache_id = noone)
 {
     var _url = "https://connections.saragalea91.workers.dev";
-    //"https://gateway.ai.cloudflare.com/v1/a5b1ece20b8a8b6f068b8587f955b4fa/my_connections_gateway/google-ai-studio/v1beta/models/gemini-2.5-flash:generateContent"
+    //"https://gateway.ai.cloudflare.com/v1/a5b1ece20b8a8b6f068b8587f955b4fa/connections_gateway/google-ai-studio/v1beta/models/gemini-2.5-flash:generateContent"
     var _map = ds_map_create();
     
     /// Header (-H)
@@ -24,7 +24,7 @@ function scr_request_puzzle(prompt, cache_id = noone)
         
     };
     
-    if (cache_id) struct_set(_data, "cache_key", cache_id);
+    if (cache_id != noone) struct_set(_data, "cache_key", cache_id);
     
     //////////////////////////////// -X //// -H /////// -d ////////////
     request_id = http_request(_url, "POST", _map, json_stringify(_data));
@@ -100,4 +100,9 @@ function clean_up_response(_str)
     
     return _str;
     
+}
+
+function print(txt)
+{
+    show_debug_message(txt);
 }

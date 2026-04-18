@@ -35,9 +35,15 @@ var _size = ds_map_size(async_load);
 
 var _key = ds_map_find_first(async_load);
 
-
 for (var i = 0; i < _size; i++) 
 {
+    
+    if (_key == "response_headers")
+    {
+        var _headers = ds_map_find_value(async_load, _key)
+        var isCached = ds_map_find_value(_headers, "cf-aig-cache-status")
+        show_debug_message($"Cached stat: {isCached}");
+    }
     if (_key == "result") 
     {
         //show_debug_message("<Section {0}> {1} ",i, async_load[? _key]);
@@ -90,10 +96,11 @@ for (var i = 0; i < _size; i++)
          */
         #endregion
         
-        
         event_user(0); //create
         
     }
     
     _key = ds_map_find_next(async_load, _key);
 }
+
+show_debug_message($"Cached stat: {isCached}")

@@ -8,4 +8,5 @@ showError = true;
 
 layer_set_visible("UI_Help", false);
 
-alarm[0] = GAME_SPEED*5;
+//turn off error UI
+alarm[0] = GAME_SPEED*10;
