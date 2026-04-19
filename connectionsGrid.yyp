@@ -46,7 +46,6 @@
     {"id":{"name":"obj_monthEntry","path":"objects/obj_monthEntry/obj_monthEntry.yy",},},
     {"id":{"name":"obj_resultDisplay","path":"objects/obj_resultDisplay/obj_resultDisplay.yy",},},
     {"id":{"name":"obj_setup","path":"objects/obj_setup/obj_setup.yy",},},
-    {"id":{"name":"obj_viewManager","path":"objects/obj_viewManager/obj_viewManager.yy",},},
     {"id":{"name":"obj_yearEntry","path":"objects/obj_yearEntry/obj_yearEntry.yy",},},
     {"id":{"name":"par_button","path":"objects/par_button/par_button.yy",},},
     {"id":{"name":"par_numEntry","path":"objects/par_numEntry/par_numEntry.yy",},},

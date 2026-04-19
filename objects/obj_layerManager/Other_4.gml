@@ -10,7 +10,7 @@ show_debug_message($"Background code! {bk_id}")
 switch (room) 
 {
 	case rm_genrated:
-        display_set_gui_size(room_width, room_height);
+        
         layer_set_visible("UI_MainGameRoom", false);
         layer_set_visible("UI_GameMode", true);
         //layer_set_visible("UI_Results", false);

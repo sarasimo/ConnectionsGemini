@@ -59,4 +59,57 @@ enum card_img
 }
 
 
+/*
+active_puzzle = [
+  {
+    "category": "LOOK WITH AWE",
+    "words": ["GOGGLE", "MARVEL", "STARE", "WONDER"]
+  },
+  {
+    "category": "ELECTRICITY TERMS",
+    "words": ["AC", "DC", "POWER", "VOLTAGE"]
+  },
+  {
+    "category": "UNEXPECTED WINNER",
+    "words": ["DARK HORSE", "LONG SHOT", "SLEEPER", "UNDERDOG"]
+  },
+  {
+    "category": "STARTS WITH A SODA NAME",
+    "words": ["CRUSHWORTHY", "FANTAGRAPHICS", "FRESCADE", "PEPSINOGEN"]
+  }
+]
 
+ /*
+ *{ candidates : [ { content : { role : "model", parts : [ { text : "```json
+[
+  {
+    "words": ["GOGGLE", "MARVEL", "STARE", "WONDER"],
+    "category": "LOOK AT WITH AWE"
+  },
+  {
+    "words": ["AC", "DC", "POWER", "VOLTAGE"],
+    "category": "BASIC ELECTRICITY TERMS"
+  },
+  {
+    "words": ["DARK HORSE", "LONG SHOT", "SLEEPER", "UNDERDOG"],
+    "category": "UNEXPECTED WINNER"
+  },
+  {
+    "words": ["CRUSHWORTHY", "FANTAGRAPHICS", "FRESCADE", "PEPSINOGEN"],
+    "category": "STARTING WITH SODA BRANDS"
+  }
+]
+```" } ] }, finishReason : "STOP", index : 0, "safetyRatings": [
+        {
+          "category": "HARM_CATEGORY_HARASSMENT",
+          "probability": "NEGLIGIBLE"
+        }
+      ]
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 10,
+    "candidatesTokenCount": 20,
+    "totalTokenCount": 30
+  }
+}
