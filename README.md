@@ -28,16 +28,19 @@ Once you choose a game mode a loading screen will appear while we wait for the A
 - Right click removes selection
 - Click the submit button to submit a guess
 - Scroll change border colour (This feature is just to help you think)
+- **Note** If you're playing the webversion you have to **refresh** the webpage to return to main menu. Unfortunately there is a bug in UI layers and I have yet to find a workaround
+- If you download the project and playing on any other target you can use the back buttons
 
 ### Downloading the project itself
 
 #### Viewing and editing project files
 - Download Gamemaker Studio - free version is fine.
 - This project works by making API requests.
-- In order to make the html vesrion of the game available online I used a cloudfare AI worker and an AI gate to hide my Google Gemini key.
+- In order to make the html version of the game available online I used a cloudfare AI worker and an AI gate to hide my Google Gemini key.
+- Code for worker is not included in this project
 - The request ultimately gets processed by Gemini 2.5
 
-##### Want to incorporate AI into your Gamemaker project.
+##### Want to incorporate AI into your Gamemaker project?
 ###### These are the main files you need to look at
 - **Scripts/scr_AI** - contains the **scr_request_puzzle()** function that creates and sends the Http request
 - **obj_setup:** Defines prompts, calls request function and **Async-HTTP event** processes the response from or request

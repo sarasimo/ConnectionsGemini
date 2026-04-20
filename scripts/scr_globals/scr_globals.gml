@@ -80,7 +80,7 @@ active_puzzle = [
 ]
 
  /*
- *{ candidates : [ { content : { role : "model", parts : [ { text : "```json
+ { candidates : [ { content : { role : "model", parts : [ { text : "```json
 [
   {
     "words": ["GOGGLE", "MARVEL", "STARE", "WONDER"],

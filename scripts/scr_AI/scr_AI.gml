@@ -4,10 +4,10 @@ function scr_request_puzzle(prompt, cache_id = noone)
     //"https://gateway.ai.cloudflare.com/v1/a5b1ece20b8a8b6f068b8587f955b4fa/connections_gateway/google-ai-studio/v1beta/models/gemini-2.5-flash:generateContent"
     var _map = ds_map_create();
     
-    /// Header (-H)
+    /// Headers (-H) 
     //ds_map_add(_map, "cf-aig-authorization", $"Bearer {API_KEY}");
     ds_map_add(_map, "Content-Type", "application/json");
-    //ds_map_add(_map, "cf-aig-byok-alias", "connectionsAI");
+    
     
     /// -d  (will be converted to json string)
     var _data = 
